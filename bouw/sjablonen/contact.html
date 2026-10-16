@@ -1,0 +1,31 @@
+{% extends "basis.html" %}
+{% block inhoud %}
+<header class="paginakop">
+  <p class="bovenkop">Contact & afspraak</p>
+  <h1>Kom langs</h1>
+  <p>{{ inhoud.afspraak.uitleg }}</p>
+  {% include "_afspraakknop.html" %}
+</header>
+
+<div class="breed kaarten">
+  <section class="kaart">
+    <h2>Waar</h2>
+    <p>{{ b.adres_tekst }}</p>
+  </section>
+  <section class="kaart">
+    <h2>Wanneer</h2>
+    <dl class="tijden">
+      {% for t in b.openingstijden %}<dt>{{ t.dagen }}</dt><dd>{{ t.tijden }}</dd>{% endfor %}
+    </dl>
+  </section>
+  <section class="kaart">
+    <h2>Betalen</h2>
+    <p>{{ b.betalen }}</p>
+  </section>
+  <section class="kaart">
+    <h2>Annuleren</h2>
+    <p>{{ b.annuleren }}</p>
+  </section>
+</div>
+{% endblock %}
+{% block afsluiter %}{% endblock %}

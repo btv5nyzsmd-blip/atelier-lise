@@ -1,0 +1,33 @@
+{% extends "basis.html" %}
+{% block inhoud %}
+{% set o = inhoud.over_mij %}
+<section class="over breed">
+  {% if fotos.lise %}
+  <figure class="over__foto">
+    {% with foto=fotos.lise, sizes="(min-width: 900px) 40vw, 100vw", alt="Lise, nagelstyliste bij " ~ b.naam, lazy=false %}{% include "_foto.html" %}{% endwith %}
+  </figure>
+  {% endif %}
+  <div class="over__tekst">
+    <p class="bovenkop">Over mij</p>
+    <h1>{{ o.kop }}</h1>
+    {% for alinea in o.alineas %}<p>{{ alinea }}</p>{% endfor %}
+  </div>
+</section>
+
+<section class="sectie sectie--zacht">
+  <div class="breed tweekoloms tweekoloms--gelijk">
+    <div>
+      <h2>{{ o.werkwijze_kop }}</h2>
+      <ol class="stappen">
+        {% for stap in o.werkwijze %}<li>{{ stap }}</li>{% endfor %}
+      </ol>
+    </div>
+    <div>
+      <h2>{{ o.hygiene_kop }}</h2>
+      <ul class="vinkjes">
+        {% for punt in o.hygiene %}<li>{{ punt }}</li>{% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+{% endblock %}

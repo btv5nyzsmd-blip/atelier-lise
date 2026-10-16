@@ -1,0 +1,227 @@
+# =====================================================================
+#  ALLE TEKSTEN EN PRIJZEN VAN DE WEBSITE
+# =====================================================================
+#
+#  Dit is het enige bestand dat je hoeft aan te passen om teksten of
+#  prijzen te veranderen. Een paar spelregels:
+#
+#  1. Tekst staat tussen "aanhalingstekens". Laat die staan.
+#     Wil je binnen een tekst een aanhalingsteken? Gebruik dan ’ of ‘ ’
+#     (bijvoorbeeld: ’s avonds).
+#  2. De inspringing (spaties aan het begin van een regel) is belangrijk.
+#     Gebruik spaties, geen tab. Kopieer bij twijfel een bestaande regel.
+#  3. Een regel die begint met # is een notitie en komt niet op de site.
+#  4. Een nieuwe behandeling of vraag toevoegen? Kopieer een blok dat
+#     begint met een streepje (-) en pas de tekst aan.
+#
+# =====================================================================
+
+
+# ---------------------------------------------------------------------
+#  ALGEMEEN
+# ---------------------------------------------------------------------
+bedrijf:
+  naam: "Atelier Lise"
+  ondertitel: "Gellak & nail art in Zwolle"
+  instagram: "atelierlise.zwolle"        # zonder @
+  plaats: "Zwolle"
+  wijk: "Assendorp"                      # alleen de wijk, niet het adres
+  # Het precieze adres zetten we bewust NIET op de site (het is een
+  # woonhuis). Klanten krijgen het adres bij het bevestigen van de afspraak.
+  adres_tekst: "Aan huis in Zwolle-Assendorp. Het exacte adres krijg je bij de bevestiging van je afspraak."
+  openingstijden:
+    - dagen: "Maandag t/m vrijdag"
+      tijden: "’s avonds, op afspraak"
+    - dagen: "Zaterdag & zondag"
+      tijden: "Overdag, op afspraak"
+  betalen: "Contant of via Tikkie"
+  annuleren: "Kun je niet? Laat het uiterlijk 24 uur van tevoren weten, dan kan iemand anders je plekje krijgen. Er kan altijd iets tussenkomen, dus neem bij twijfel gewoon even contact op."
+
+  # Het webadres van de site. Vul dit in zodra je een domeinnaam hebt,
+  # bijvoorbeeld "https://www.atelierlise.nl". Dit helpt Google.
+  website: ""
+
+
+# ---------------------------------------------------------------------
+#  KNOP "AFSPRAAK MAKEN"
+# ---------------------------------------------------------------------
+afspraak:
+  knop_tekst: "Afspraak maken"
+  uitleg: "Stuur me een berichtje op Instagram met de behandeling die je wilt en een paar dagen die jou uitkomen. Ik reageer meestal binnen een dag."
+
+
+# ---------------------------------------------------------------------
+#  HOMEPAGINA
+# ---------------------------------------------------------------------
+home:
+  kop: "Verzorgde nagels, in alle rust"
+  intro: "Welkom bij Atelier Lise: een kleine, gezellige nagelstudio aan huis in Zwolle. Hier neem je even de tijd voor jezelf, met een kop thee en nagels die weken mooi blijven."
+  # Drie korte punten onder de introductie
+  punten:
+    - titel: "Gellak dat blijft zitten"
+      tekst: "Twee tot drie weken glans, zonder afbladderen."
+    - titel: "Schoon & zorgvuldig"
+      tekst: "Gedesinfecteerde materialen en een nieuwe vijl voor iedere klant."
+    - titel: "Op jouw moment"
+      tekst: "Ook ’s avonds en in het weekend."
+
+
+# ---------------------------------------------------------------------
+#  BEHANDELINGEN & PRIJZEN
+# ---------------------------------------------------------------------
+#  Per groep een titel en een lijst behandelingen.
+#  "duur" en "tekst" mag je leeg laten ("").
+behandelingen:
+  - groep: "Handen"
+    items:
+      - naam: "Gellak handen"
+        prijs: "€27"
+        duur: "± 60 min"
+        tekst: "Nagels vijlen, nagelriemen verzorgen en gellak in een kleur naar keuze."
+      - naam: "BIAB / versteviging"
+        prijs: "€35"
+        duur: "± 75 min"
+        tekst: "Een sterke basislaag voor zwakke of zachte nagels, met of zonder kleur."
+      - naam: "Verlengen met gel"
+        prijs: "€45"
+        duur: "± 2 uur"
+        tekst: "Een nieuwe set in de lengte en vorm die je wilt."
+      - naam: "Opvullen gel"
+        prijs: "€37"
+        duur: "± 90 min"
+        tekst: "Na 3 tot 4 weken, zodat je set weer als nieuw is."
+
+  - groep: "Voeten"
+    items:
+      - naam: "Gellak voeten"
+        prijs: "€27"
+        duur: "± 45 min"
+        tekst: "Perfect voor de zomer (of gewoon omdat het kan)."
+      - naam: "Combi handen + voeten"
+        prijs: "€49"
+        duur: "± 1 uur 45 min"
+        tekst: "Allebei gellak, met €5 korting."
+
+  - groep: "Extra’s"
+    items:
+      - naam: "Nail art"
+        prijs: "vanaf €5"
+        duur: ""
+        tekst: "Van een simpel lijntje tot een volledige set. Stuur gerust een voorbeeldfoto."
+      - naam: "French of chrome"
+        prijs: "€5"
+        duur: ""
+        tekst: ""
+      - naam: "Verwijderen van eigen werk"
+        prijs: "gratis"
+        duur: ""
+        tekst: "Bij een nieuwe behandeling."
+      - naam: "Verwijderen (ander werk / los)"
+        prijs: "€12,50"
+        duur: "± 30 min"
+        tekst: "Voorzichtig verwijderd, zonder je eigen nagel te beschadigen."
+      - naam: "Reparatie per nagel"
+        prijs: "€3,50"
+        duur: ""
+        tekst: "Gratis binnen 5 dagen na je afspraak."
+
+prijzen_voetnoot: "Alle prijzen zijn inclusief btw. Twijfel je welke behandeling bij je past? Stuur me een berichtje, dan denk ik met je mee."
+
+
+# ---------------------------------------------------------------------
+#  PORTFOLIO
+# ---------------------------------------------------------------------
+#  Zet foto’s in de map  fotos/portfolio  . Ze verschijnen automatisch
+#  op volgorde van bestandsnaam (01.jpg, 02.jpg, ...).
+#  Hieronder kun je per foto een korte beschrijving geven. Die ziet een
+#  bezoeker onder de vergrote foto, en Google leest hem ook.
+portfolio_intro: "Een greep uit mijn werk. Meer en nieuwer werk vind je op Instagram."
+portfolio:
+  - foto: "01.jpg"
+    tekst: "Zachtroze gellak met fijne gouden lijntjes"
+  - foto: "02.jpg"
+    tekst: "Melkwitte BIAB, kort en naturel"
+  - foto: "03.jpg"
+    tekst: "Diep bordeauxrood voor de herfst"
+  - foto: "04.jpg"
+    tekst: "Moderne french met een kleurtje"
+  - foto: "05.jpg"
+    tekst: "Chrome-afwerking op amandelvormige nagels"
+  - foto: "06.jpg"
+    tekst: "Nail art met kleine bloemetjes"
+  - foto: "07.jpg"
+    tekst: "Saliegroen met matte toplaag"
+  - foto: "08.jpg"
+    tekst: "Verlengde set in nude"
+
+
+# ---------------------------------------------------------------------
+#  OVER MIJ
+# ---------------------------------------------------------------------
+#  De foto van Lise heet  fotos/lise.jpg  .
+over_mij:
+  kop: "Hoi, ik ben Lise"
+  alineas:
+    - "Al sinds mijn tienerjaren lakte ik de nagels van vriendinnen, zussen en iedereen die even stil wilde zitten. Wat begon als hobby, werd een vak: ik volgde de opleiding tot nagelstyliste en werk inmiddels een aantal jaar met gellak, BIAB en gel."
+    - "In mijn studio aan huis in Zwolle neem ik voor iedere klant ruim de tijd. Geen lopende band, maar rustig samen kijken wat bij jouw handen en jouw stijl past."
+    - "Het mooiste vind ik het moment dat iemand haar handen bekijkt en zegt: “Wauw, zijn dit de mijne?”"
+  werkwijze_kop: "Zo werk ik"
+  werkwijze:
+    - "We beginnen met een kort gesprek: wat wil je, en hoe zijn je nagels nu?"
+    - "Ik verzorg je nagelriemen en breng je nagels in vorm."
+    - "Daarna gellak of gel, laag voor laag uitgehard onder de lamp."
+    - "Je gaat naar huis met nazorgtips, zodat je er zo lang mogelijk van geniet."
+  hygiene_kop: "Hygiëne"
+  hygiene:
+    - "Metalen instrumenten worden na iedere klant gereinigd en gedesinfecteerd."
+    - "Vijlen en buffers zijn voor eenmalig gebruik, of gaan na afloop mee naar huis."
+    - "Werkplek en handen worden voor elke behandeling schoongemaakt."
+    - "Ik werk met professionele producten van gerenommeerde merken."
+
+
+# ---------------------------------------------------------------------
+#  VEELGESTELDE VRAGEN
+# ---------------------------------------------------------------------
+vragen:
+  - vraag: "Hoe lang blijft gellak zitten?"
+    antwoord: "Gemiddeld 2 tot 3 weken. Dat hangt af van je eigen nagels en wat je met je handen doet. Na 3 weken is je nagel zichtbaar uitgegroeid en is het tijd voor een nieuwe set."
+  - vraag: "Kan ik gellak zelf verwijderen?"
+    antwoord: "Liever niet trekken of pulken: dan gaat er een laagje van je eigen nagel mee en worden je nagels dun. Ik verwijder je oude gellak gratis bij een nieuwe behandeling. Wil je het zelf doen, vraag me dan om tips."
+  - vraag: "Hoe zorg ik dat het lang mooi blijft?"
+    antwoord: "Gebruik dagelijks een druppel nagelriemolie, draag handschoenen bij schoonmaken en afwassen, en gebruik je nagels niet als gereedschap (blikjes, stickers…). Heb je binnen 5 dagen toch een nagel die loslaat? Dan herstel ik hem gratis."
+  - vraag: "Is gellak slecht voor mijn nagels?"
+    antwoord: "Niet als het goed wordt aangebracht en verwijderd. De meeste schade ontstaat door trekken of hard vijlen. Daarom werk ik voorzichtig en raad ik af om je gellak er zelf af te halen."
+  - vraag: "Wat is het verschil tussen gellak en BIAB?"
+    antwoord: "Gellak is een kleurlaag op je natuurlijke nagel. BIAB is wat dikker en steviger, en helpt als je nagels snel breken of zacht zijn. Je kunt er ook een kleur op laten zetten."
+  - vraag: "Wat als ik mijn afspraak moet verzetten?"
+    antwoord: "Laat het uiterlijk 24 uur van tevoren weten via Instagram, dan zoeken we samen een nieuwe datum. Er kan altijd iets tussenkomen, dus neem gerust contact op."
+  - vraag: "Hoe kan ik betalen?"
+    antwoord: "Contant of via een Tikkie na afloop."
+  - vraag: "Kan ik parkeren?"
+    antwoord: "Ja, in de straat kun je parkeren. Op de fiets? Dan staat hij veilig in de voortuin."
+
+
+# ---------------------------------------------------------------------
+#  ZOEKMACHINES (Google)
+# ---------------------------------------------------------------------
+#  Per pagina de titel en korte omschrijving die Google toont.
+#  Houd titels onder ± 60 tekens en omschrijvingen onder ± 155 tekens.
+seo:
+  home:
+    titel: "Gellak nagels Zwolle | Atelier Lise – nagelstudio aan huis"
+    omschrijving: "Gellak, BIAB en nail art in Zwolle-Assendorp. Rustige nagelstudio aan huis, ook ’s avonds en in het weekend. Maak eenvoudig een afspraak via Instagram."
+  behandelingen:
+    titel: "Prijzen gellak, BIAB & nail art in Zwolle | Atelier Lise"
+    omschrijving: "Bekijk alle behandelingen en prijzen: gellak handen en voeten, BIAB, verlengen met gel en nail art. Nagelstudio aan huis in Zwolle."
+  portfolio:
+    titel: "Portfolio nail art & gellak | Atelier Lise Zwolle"
+    omschrijving: "Bekijk voorbeelden van gellak, BIAB en nail art van Atelier Lise, nagelstudio aan huis in Zwolle."
+  over_mij:
+    titel: "Over Lise – nagelstyliste in Zwolle | Atelier Lise"
+    omschrijving: "Maak kennis met Lise: nagelstyliste met een kleine studio aan huis in Zwolle. Over haar werkwijze, ervaring en hygiëne."
+  vragen:
+    titel: "Veelgestelde vragen over gellak | Atelier Lise Zwolle"
+    omschrijving: "Hoe lang blijft gellak zitten? Hoe verwijder je het? En hoe houd je het mooi? Antwoorden op veelgestelde vragen over gellak en BIAB."
+  contact:
+    titel: "Afspraak maken & contact | Atelier Lise Zwolle"
+    omschrijving: "Maak een afspraak voor gellak of nail art in Zwolle-Assendorp. Op afspraak, ook ’s avonds en in het weekend. Stuur een berichtje via Instagram."

@@ -1,0 +1,64 @@
+{% extends "basis.html" %}
+{% block inhoud %}
+<section class="held">
+  <div class="held__tekst">
+    <p class="bovenkop">{{ b.ondertitel }}</p>
+    <h1>{{ inhoud.home.kop }}</h1>
+    <p class="held__intro">{{ inhoud.home.intro }}</p>
+    {% include "_afspraakknop.html" %}
+    <a class="tekstlink" href="behandelingen.html">Bekijk behandelingen & prijzen →</a>
+  </div>
+  {% if fotos.sfeer %}
+  <figure class="held__foto">
+    {% with foto=fotos.sfeer, sizes="(min-width: 900px) 50vw, 100vw", alt="Sfeerbeeld van de nagelstudio van " ~ b.naam, lazy=false %}{% include "_foto.html" %}{% endwith %}
+  </figure>
+  {% endif %}
+</section>
+
+<section class="punten">
+  <ul class="breed">
+    {% for punt in inhoud.home.punten %}
+    <li>
+      <span class="punten__nr">0{{ loop.index }}</span>
+      <h2>{{ punt.titel }}</h2>
+      <p>{{ punt.tekst }}</p>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+
+{% if fotos.portfolio %}
+<section class="sectie">
+  <div class="breed">
+    <div class="sectie__kop">
+      <div>
+        <p class="bovenkop">Portfolio</p>
+        <h2>Recent werk</h2>
+      </div>
+      <a class="tekstlink" href="portfolio.html">Alles bekijken →</a>
+    </div>
+    <ul class="strook">
+      {% for foto in fotos.portfolio[:4] %}
+      <li>{% with sizes="(min-width: 900px) 25vw, 70vw", alt=foto.tekst or "Nagels door " ~ b.naam, lazy=true %}{% include "_foto.html" %}{% endwith %}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+{% endif %}
+
+<section class="sectie sectie--zacht">
+  <div class="breed tweekoloms">
+    <div>
+      <p class="bovenkop">Populair</p>
+      <h2>Behandelingen</h2>
+      <p>Van een fris kleurtje tot een complete set met nail art. Alle prijzen vind je op één overzichtelijke pagina.</p>
+      <a class="knop knop--lijn" href="behandelingen.html">Alle prijzen</a>
+    </div>
+    <ul class="prijslijst prijslijst--kort">
+      {% for item in inhoud.behandelingen[0]["items"][:3] %}
+      <li><span class="prijslijst__naam">{{ item.naam }}</span><span class="prijslijst__stip"></span><span class="prijslijst__prijs">{{ item.prijs }}</span></li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+{% endblock %}

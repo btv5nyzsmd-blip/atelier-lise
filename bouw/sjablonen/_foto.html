@@ -1,0 +1,4 @@
+{# Gebruik: {% with foto=..., sizes="...", alt="...", lazy=true %}{% include "_foto.html" %}{% endwith %} #}
+<img src="{{ foto.src }}" srcset="{{ foto.srcset }}" sizes="{{ sizes }}"
+     width="{{ foto.breedte }}" height="{{ foto.hoogte }}" alt="{{ alt }}"
+     {% if lazy %}loading="lazy"{% else %}fetchpriority="high"{% endif %} decoding="async">

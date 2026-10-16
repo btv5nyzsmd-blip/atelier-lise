@@ -1,0 +1,5 @@
+# Deze mappen maakt het bouwprogramma zelf aan; ze horen niet in GitHub
+_site/
+.foto-cache/
+__pycache__/
+.DS_Store

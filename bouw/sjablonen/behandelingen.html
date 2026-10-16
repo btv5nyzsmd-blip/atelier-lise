@@ -1,0 +1,30 @@
+{% extends "basis.html" %}
+{% block inhoud %}
+<header class="paginakop">
+  <p class="bovenkop">Behandelingen & prijzen</p>
+  <h1>Wat mag het zijn?</h1>
+</header>
+
+<div class="smal">
+  {% for groep in inhoud.behandelingen %}
+  <section class="prijsgroep">
+    <h2>{{ groep.groep }}</h2>
+    <ul class="prijslijst">
+      {% for item in groep["items"] %}
+      <li>
+        <div class="prijslijst__regel">
+          <span class="prijslijst__naam">{{ item.naam }}</span>
+          <span class="prijslijst__stip"></span>
+          <span class="prijslijst__prijs">{{ item.prijs }}</span>
+        </div>
+        {% if item.tekst or item.duur %}
+        <p class="prijslijst__extra">{{ item.tekst }}{% if item.tekst and item.duur %} · {% endif %}{% if item.duur %}<span class="duur">{{ item.duur }}</span>{% endif %}</p>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </section>
+  {% endfor %}
+  <p class="voetnoot">{{ inhoud.prijzen_voetnoot }}</p>
+</div>
+{% endblock %}

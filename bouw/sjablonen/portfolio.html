@@ -1,0 +1,31 @@
+{% extends "basis.html" %}
+{% block inhoud %}
+<header class="paginakop">
+  <p class="bovenkop">Portfolio</p>
+  <h1>Mijn werk</h1>
+  <p>{{ inhoud.portfolio_intro }}</p>
+</header>
+
+<div class="breed">
+  <ul class="galerij">
+    {% for foto in fotos.portfolio %}
+    <li>
+      <a href="{{ foto.groot }}" class="galerij__link" data-tekst="{{ foto.tekst }}">
+        {% with sizes="(min-width: 900px) 33vw, 50vw", alt=foto.tekst or "Nagels door " ~ b.naam, lazy=not loop.first %}{% include "_foto.html" %}{% endwith %}
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+  <p class="midden"><a class="knop knop--lijn" href="{{ instagram_url }}" target="_blank" rel="noopener">{% include "_instagram-icoon.html" %} Meer op Instagram</a></p>
+</div>
+
+<dialog class="lichtbak" aria-label="Vergrote foto">
+  <button class="lichtbak__sluit" aria-label="Sluiten">×</button>
+  <button class="lichtbak__pijl lichtbak__pijl--vorige" aria-label="Vorige foto">‹</button>
+  <figure>
+    <img alt="">
+    <figcaption></figcaption>
+  </figure>
+  <button class="lichtbak__pijl lichtbak__pijl--volgende" aria-label="Volgende foto">›</button>
+</dialog>
+{% endblock %}

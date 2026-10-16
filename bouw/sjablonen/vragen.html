@@ -1,0 +1,23 @@
+{% extends "basis.html" %}
+{% block inhoud %}
+<header class="paginakop">
+  <p class="bovenkop">Goed om te weten</p>
+  <h1>Veelgestelde vragen</h1>
+</header>
+
+<div class="smal">
+  <div class="vragen">
+    {% for v in inhoud.vragen %}
+    <details{% if loop.first %} open{% endif %}>
+      <summary>{{ v.vraag }}</summary>
+      <p>{{ v.antwoord }}</p>
+    </details>
+    {% endfor %}
+  </div>
+  <p class="voetnoot">Staat je vraag er niet tussen? <a href="{{ bericht_url }}" target="_blank" rel="noopener">Stuur me een berichtje.</a></p>
+</div>
+
+<script type="application/ld+json">
+{{ faq_data | safe }}
+</script>
+{% endblock %}

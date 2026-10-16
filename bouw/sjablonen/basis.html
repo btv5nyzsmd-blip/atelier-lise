@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ seo.titel }}</title>
+  {% if seo.omschrijving %}<meta name="description" content="{{ seo.omschrijving }}">{% endif %}
+  {% if canonical %}<link rel="canonical" href="{{ canonical }}">{% endif %}
+  <meta name="theme-color" content="#f7f1ec">
+
+  <!-- Hoe de site eruitziet als je hem deelt via WhatsApp, Instagram, enz. -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="nl_NL">
+  <meta property="og:site_name" content="{{ b.naam }}">
+  <meta property="og:title" content="{{ seo.titel }}">
+  {% if seo.omschrijving %}<meta property="og:description" content="{{ seo.omschrijving }}">{% endif %}
+  {% if website and fotos.sfeer %}<meta property="og:image" content="{{ website }}/{{ fotos.sfeer.deel }}">{% endif %}
+
+  <link rel="icon" href="assets/afbeeldingen/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/lettertypes/fraunces-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/lettertypes/dm-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/stijl.css">
+  <script src="assets/js/site.js" defer></script>
+  {% if pagina == "index.html" %}
+  <script type="application/ld+json">{{ structured_data | safe }}</script>
+  {% endif %}
+</head>
+<body class="pagina-{{ pagina | replace('.html', '') }}">
+  <a class="sla-over" href="#inhoud">Naar de inhoud</a>
+
+  <header class="kop">
+    <div class="kop__binnen">
+      <a class="logo" href="index.html" aria-label="{{ b.naam }}, naar de homepage">
+        <svg class="logo__teken" viewBox="0 0 40 48" aria-hidden="true">
+          <path d="M20 3c8.3 0 14 7.6 14 17.5V44a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V20.5C6 10.6 11.7 3 20 3Z" fill="none" stroke="currentColor" stroke-width="1.6"/>
+          <path d="M13 17.5c1.4-4.6 4-7.2 7-7.2" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" opacity=".55"/>
+          <path d="M28.5 30.5l1 2.6 2.6 1-2.6 1-1 2.6-1-2.6-2.6-1 2.6-1z" fill="currentColor"/>
+        </svg>
+        <span class="logo__tekst">Atelier <em>Lise</em></span>
+      </a>
+
+      <button class="menu-knop" aria-expanded="false" aria-controls="menu">
+        <span class="menu-knop__streep"></span>
+        <span class="visueel-verborgen">Menu</span>
+      </button>
+
+      <nav id="menu" class="menu" aria-label="Hoofdmenu">
+        <ul>
+          {% for bestand, tekst in menu %}
+          <li><a href="{{ bestand }}"{% if bestand == pagina %} aria-current="page"{% endif %}>{{ tekst }}</a></li>
+          {% endfor %}
+        </ul>
+        <a class="knop knop--klein" href="{{ bericht_url }}" target="_blank" rel="noopener">{{ inhoud.afspraak.knop_tekst }}</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inhoud">
+    {% block inhoud %}{% endblock %}
+  </main>
+
+  {% block afsluiter %}
+  <section class="afsluiter">
+    <div class="smal">
+      <p class="bovenkop">Zin in mooie nagels?</p>
+      <h2>Plan je moment voor jezelf</h2>
+      <p>{{ inhoud.afspraak.uitleg }}</p>
+      {% include "_afspraakknop.html" %}
+    </div>
+  </section>
+  {% endblock %}
+
+  <footer class="voet">
+    <div class="voet__binnen">
+      <div>
+        <p class="voet__naam">Atelier <em>Lise</em></p>
+        <p>{{ b.ondertitel }}<br>{{ b.wijk }}, {{ b.plaats }}</p>
+      </div>
+      <div>
+        <p class="voet__kop">Openingstijden</p>
+        <p>{% for t in b.openingstijden %}{{ t.dagen }}: {{ t.tijden }}{% if not loop.last %}<br>{% endif %}{% endfor %}</p>
+      </div>
+      <div>
+        <p class="voet__kop">Volg mij</p>
+        <p><a href="{{ instagram_url }}" target="_blank" rel="noopener">@{{ b.instagram }} op Instagram</a></p>
+      </div>
+    </div>
+    <p class="voet__klein">© {{ jaar }} {{ b.naam }} · Deze site gebruikt geen cookies en slaat geen gegevens op.</p>
+  </footer>
+
+  <!-- Vaste knop onderin op de telefoon -->
+  <div class="plakbalk">
+    <a class="knop knop--vol" href="{{ bericht_url }}" target="_blank" rel="noopener">
+      {% include "_instagram-icoon.html" %} {{ inhoud.afspraak.knop_tekst }}
+    </a>
+  </div>
+</body>
+</html>
